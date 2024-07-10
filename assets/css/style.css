@@ -1,0 +1,97 @@
+* {
+  border: none;
+  outline: none;
+}
+
+.parent-form {
+  display: flex;
+  margin: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-login {
+  font-size: 25px;
+  font-weight: bold;
+}
+.content-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #b6895b;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.input-wrapper input {
+  width: 314px;
+  height: 55px;
+  border-radius: 20px;
+  padding-left: 15px;
+}
+
+.button-login {
+  width: 100%;
+  height: 55px;
+  border-radius: 20px;
+  background-color: #010101;
+  color: #b6895b;
+}
+
+/* feetch */
+body {
+  background-color: black;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+
+.container {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  margin: 100px 100px 50px 100px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* button */
+button {
+  background-color: #3366ff;
+  color: #fff;
+  height: 50px;
+  border: none;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.input-fname {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.table-person {
+  font-size: 14px;
+  color: #b1afff;
+}
+
+.thead {
+  background-color: #3572ef;
+}
