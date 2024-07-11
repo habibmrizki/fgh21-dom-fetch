@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- bottstrap -->
+    <link rel="stylesheet" href="assets/bootstrap5/css/" />
     <!-- style css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -20,13 +22,13 @@
       <form id="form-survey" style="margin-bottom: 20px">
         <div class="text">Survey orang perokok</div>
         <div>
-          <label for="fname">siapa nama anda?</label>
+          <label for="fname">Siapa nama anda?</label>
           <div>
             <input type="text" id="fname" class="input-fname" />
           </div>
         </div>
         <div>
-          <label for="age">berapa umur anda?</label>
+          <label for="age">Berapa umur anda?</label>
           <div>
             <input type="number" id="age" class="input-fname" />
           </div>
@@ -45,12 +47,12 @@
         <div>
           <div>Apa anda merokok?</div>
           <div>
-            <input type="radio" id="smoke1" name="smoke" value="Yes" />
-            <label for="smoke1">Yes</label>
+            <input type="radio" id="yes" name="smoke" value="Ya" />
+            <label for="yes">Yes</label>
           </div>
           <div>
-            <input type="radio" id="smoke2" name="smoke" value="No" />
-            <label for="smoke2">No</label>
+            <input type="radio" id="no" name="smoke" value="TIdak" />
+            <label for="no">No</label>
           </div>
         </div>
         <div>
@@ -62,7 +64,7 @@
               name="smoker"
               value="Gudang Garam Filter"
             />
-            <label for="smoker1">Gudang Garam Filter</label>
+            <label for="gudang-garam-filter">Gudang Garam Filter</label>
           </div>
           <div>
             <input
@@ -71,18 +73,18 @@
               name="smoker"
               value="Lucky Strike"
             />
-            <label for="smoker2">Lucky Strike</label>
+            <label for="lucky-strike">Lucky Strike</label>
           </div>
           <div>
             <input type="checkbox" id="malboro" name="smoker" value="Malboro" />
-            <label for="smoker3">Malboro</label>
+            <label for="malboro">Malboro</label>
           </div>
           <div>
             <input type="checkbox" id="esse" name="smoker" value="Esse" />
-            <label for="smoker4">Esse</label>
+            <label for="esse">Esse</label>
           </div>
         </div>
-        <button type="submit" id="btn">Send</button>
+        <button id="btn">Send</button>
       </form>
       <!-- Table -->
       <table
@@ -103,60 +105,6 @@
         <tbody id="tbody" class="tbody"></tbody>
       </table>
     </div>
-    <script>
-      const form = document.getElementById("form-survey");
-      const link = "https://st2lww-8888.csb.app/habib/data";
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const fname = event.target.fname.value;
-        const age = event.target.age.value;
-        const gender = event.target.gender.value;
-        const smoke = event.target.smoker.value;
-        const smoker = event.target.smoker;
-        let cigar = [];
-        for (let i = 0; i < smoker.length; i++) {
-          if (smoker[i].checked) {
-            cigar.push(smoker[i].value);
-          }
-        }
-
-        const formData = new URLSearchParams();
-        formData.append("name", fname);
-        formData.append("age", age);
-        formData.append("gender", gender);
-        formData.append("isSmoker", smoke);
-        formData.append("cigarVariant", cigar);
-        // for (const [key, value] of formData.entries()) {
-        //   console.log(`${key}, ${value}`);
-        // }
-
-        fetch("https://st2lww-8888.csb.app/habib/data", {
-          method: "POST",
-          body: formData,
-        }).then((response) => {
-          response.json().then((data) => {
-            if (data.success === true) {
-              window.alert(data.message);
-            } else {
-              window.alert(data.message);
-            }
-          });
-        });
-
-        async function dataTable() {
-          const tableR = document.createElement("tr");
-          const tableName = document.createElement("td");
-          const tableAge = document.createElement("td");
-          const tableGender = document.createElement("td");
-          const tableSmoke = document.createElement("td");
-          const tableSmoker = document.createElement("td");
-        }
-      });
-
-      fetch("https://st2lww-8888.csb.app/habib/data", {
-        method: "GET",
-        body: formData,
-      });
-    </script>
+    <script src="assets/script/survey.js"></script>
   </body>
 </html>
